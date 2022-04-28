@@ -4,7 +4,6 @@ provider "aws" {
 
 variable "instance_count" {
   type    = number
-  default = 5
 }
 
 variable "password_length" {
@@ -14,9 +13,6 @@ variable "password_length" {
 
 variable "tags" {
   type = map(string)
-  default = {
-    source = "tfc"
-  }
 }
 
 resource "aws_security_group" "allow_egress" {
