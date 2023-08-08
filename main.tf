@@ -51,6 +51,10 @@ resource "aws_instance" "web" {
   provisioner "local-exec" {
     command = "echo 'IP address: ${self.private_ip}'"
   }
+
+  provisioner "local-exec" {
+    command = "sleep ${count.index * 10}"
+  }
 }
 
 resource "random_password" "password" {
